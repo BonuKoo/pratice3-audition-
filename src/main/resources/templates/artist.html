@@ -1,0 +1,31 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>참가자 목록</h1>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th class="size-100 align-center">참가번호</th>
+                <th class="size-150 align-center">참가자명</th>
+                <th class="size-100 align-center">생년월일</th>
+                <th class="size-100 align-center">성별</th>
+                <th class="size-100 align-center">특기</th>
+                <th class="size-100 align-center">소속사</th>
+            </tr>
+            </thead>
+            <!--출력 부분-->
+            <tbody>
+            <tr th:each="dto : ${list}">
+                <td class="align-center" th:text="${dto.artist_id}"></td>
+                <td class="align-center" th:text="${dto.artist_name}"></td>
+                <td class="align-center" th:text="${dto.artist_birth}"></td>
+                <td class="align-center" th:text="${dto.artist_gender}"></td>
+                <td class="align-center" th:text="${dto.talent}"></td>
+                <td class="align-center" th:text="${dto.agency}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div></html>
