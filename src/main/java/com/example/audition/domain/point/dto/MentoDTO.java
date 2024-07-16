@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-public class PointDto {
+public class MentoDTO {
     private Long serial_no;
     private String artist_id;
     private String artist_name;

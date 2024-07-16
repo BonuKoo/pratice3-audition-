@@ -1,7 +1,7 @@
 package com.example.audition.domain.point.service;
 
 import com.example.audition.domain.point.Point;
-import com.example.audition.domain.point.dto.PointDto;
+import com.example.audition.domain.point.dto.MentoDTO;
 import com.example.audition.domain.point.repository.PointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,13 +15,13 @@ public class PointService {
     @Autowired
     private PointRepository pointRepository;
 
-    public List<PointDto> findAllPoints() {
+    public List<MentoDTO> findAllPoints() {
         List<Point> points = pointRepository.findAll();
         return points.stream().map(point -> {
             String formattedBirth = formatBirthDate(point.getArtist().getArtist_birth());
             String grade = calculateGrade(point.getPoint());
 
-            return new PointDto(
+            return new MentoDTO(
                     point.getSerial_no(),
                     point.getArtist().getArtist_id(),
                     point.getArtist().getArtist_name(),
